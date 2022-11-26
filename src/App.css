@@ -2,6 +2,58 @@
   background-image: url('./images/bg-main-desktop.png');
   background-repeat: no-repeat;
   background-position-y: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  object-fit: contain;
+  width: 50%;
+}
+
+/* .card-back, .card-front {
+  width: 50%;
+} */
+
+/* .card-front {
+  background-image: url('./images/bg-card-front.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 25%;
+  width: 100%;
+  margin-right: 20%;
+}
+.card-back {
+  background-image: url('./images/bg-card-back.png');
+  background-color: red;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 25%;
+  width: 50%;
+  margin-right: 13%;
+} */
+
+/* .card-back div, .card-front div {
+  width: 25rem;
+  height: 20rem;
+} */
+
+.card-back, .card-front {
+  max-width: 100%;
+  position: relative;
+}
+
+.card-back img {
+  margin-left: 4rem;
+  transform: scale(0.9);
+}
+
+.card-front img {
+  margin-left: 2rem;
+}
+
+.on-image {
+  position: absolute;
 }
 
 .right {
@@ -12,7 +64,7 @@
 }
 
 .card-form {
-  width: 45%;
+  width: 50%;
 }
 
 .card-bottom {
@@ -25,5 +77,81 @@
   width: 100%;
   color: #fff;
   padding: 0.5rem;
-  border-radius: 0.3rem;
+  border-radius: 0.4rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1400px) {
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .left {
+    background-image: url('./images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: contain;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .card-back, .card-front {
+    max-width: 70%;
+  }
+  .card-back img {
+    margin-left: 4rem;
+  }
+
+  .card-front img {
+    margin-left: 2rem;
+    margin-top: 3rem;
+  }
+  
+}
+@media screen and (max-width: 770px) {
+  .left {
+    background-image: url('./images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: contain;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    object-fit: contain;
+    width: 100%;
+  }
+  
+  .right {
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+  }
+
+  .card-form {
+    width: 100%;
+  }
+  .card-back, .card-front {
+    max-width: 70%;
+  }
+  .card-back img {
+    margin-left: 4rem;
+  }
+
+  .card-front img {
+    margin-left: 2rem;
+    margin-top: 3rem;
+  }
+  
 }
