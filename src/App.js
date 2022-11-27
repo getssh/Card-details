@@ -6,6 +6,14 @@ import Cardback from './images/bg-card-back.png'
 
 function App() {
   const cardIntials = {
+    name: "",
+    cardNumber: "",
+    exMonth: "",
+    exYear: "",
+    cvc: "",
+    pattern: "jon",
+  }
+  const cardIntials2 = {
     name: "Your name",
     cardNumber: "0000 0000 0000 0000",
     exMonth: "01",
@@ -13,7 +21,7 @@ function App() {
     cvc: "000"
   }
   const [card, setCard] = useState(cardIntials)
-  const [showCard, setShowCard] = useState(cardIntials)
+  const [showCard, setShowCard] = useState(cardIntials2)
 
   function handleChange(e) {
     const {name, value} = e.target;
@@ -29,7 +37,8 @@ function App() {
     setShowCard({
       ...card
     })
-
+    
+    
     setCard(cardIntials)
     e.preventDefault()
   }
@@ -39,6 +48,8 @@ function App() {
         <div className='col-sm-12 col-md-6 left'>
           <div className='row card-front'>
               <img src={Cardfront} width="100%" />
+              <div className='my-circle'><p className='temp'></p></div>
+              <div className='my-circle2'><p className='temp2'></p></div>
               <div className='on-image1'>
                 <p>{showCard.cardNumber}</p>
               </div>
@@ -63,6 +74,8 @@ function App() {
             name="name"
             placeholder="e.g. Jane Appleseed"
             value={card.name}
+            patter="getayawkal"
+            errMessage="Can't be blank"
             handleChange={handleChange}
             />
             <Form
@@ -71,6 +84,7 @@ function App() {
             name="cardNumber"
             placeholder="e.g. 1234 5678 9123 0000"
             value={card.cardNumber}
+            errMessage="Wrong format, numbers only"
             handleChange={handleChange}
             />
             <div className='card-bottom'>
@@ -80,6 +94,7 @@ function App() {
                 name="exMonth"
                 placeholder="MM"
                 value={card.exMonth}
+                errMessage="Can't be blank"
                 handleChange={handleChange}
                 />
                 <Form
@@ -88,6 +103,7 @@ function App() {
                 name="exYear"
                 placeholder="YY"
                 value={card.exYear}
+                errMessage="Can't be blank"
                 handleChange={handleChange}
                 />
                 <Form
@@ -96,6 +112,7 @@ function App() {
                 name="cvc"
                 placeholder="e.g. 123"
                 value={card.cvc}
+                errMessage="Can't be blank"
                 handleChange={handleChange}
                 />
             </div>
